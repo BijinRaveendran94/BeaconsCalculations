@@ -153,9 +153,9 @@ public class DataClass {
         try {
 
             JSONObject metaData = new JSONObject(json);
-            JSONArray buildings = metaData.getJSONArray("Countries").getJSONObject(0).getJSONArray("States").getJSONObject(0).getJSONArray("Cities").getJSONObject(0).getJSONArray("Buildings").getJSONObject(0).getJSONArray("Floors");
+            JSONArray buildings = metaData.getJSONArray("Buildings").getJSONObject(0).getJSONArray("Floors");
             try {
-                JSONArray getCampusWaypoints = metaData.getJSONArray("Countries").getJSONObject(0).getJSONArray("States").getJSONObject(0).getJSONArray("Cities").getJSONObject(0).getJSONArray("CampusWaypoints");
+                JSONArray getCampusWaypoints = metaData.getJSONArray("CampusWaypoints");
 
                 for (int i = 0; i<getCampusWaypoints.length(); i++){
                   arrayList1.add(getCampusWaypoints.getJSONObject(i).get("PointA").toString().replace("{","").replace("}",""));
