@@ -24,7 +24,7 @@ import static java.lang.Math.pow;
 
 public class DataClass {
 
-    public double distance (double rssi, int txPower) {
+    public static double distance (double rssi, int txPower) {
         double distance = 0;
         float i = (float) 0.75;
 
@@ -44,7 +44,7 @@ public class DataClass {
         return distance;
     }
 
-    public LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues, String json){
+    public static LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues, String json){
 
 
         float earthR = 6371;
@@ -86,7 +86,7 @@ public class DataClass {
         return latLng1;
     }
 
-    public LatLng stickToRoute(Location locationA, String json){
+    public static LatLng stickToRoute(Location locationA, String json){
 
         ArrayList Waypoints = new ArrayList<JSONObject>();
         ArrayList<HashMap<String,String>> sortedlist = new ArrayList<>();
@@ -146,7 +146,7 @@ public class DataClass {
         //12.924542443103322,77.62011999594371
     }
 
-    public ArrayList getWaypointsForRoom(String json) {
+    public static ArrayList getWaypointsForRoom(String json) {
         ArrayList arrayList1 = new ArrayList();
         HashSet hashSet = new HashSet();
 
