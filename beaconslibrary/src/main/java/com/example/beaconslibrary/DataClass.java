@@ -61,7 +61,7 @@ public class DataClass {
             positions[i][1] = yA;
             positions[i][2] = zA;
 
-            distances[i] = Double.parseDouble(beconsValues.get(i).get("distance"));
+            distances[i] = Double.parseDouble(beconsValues.get(i).get("distance"))/1000;
 
         }
 
