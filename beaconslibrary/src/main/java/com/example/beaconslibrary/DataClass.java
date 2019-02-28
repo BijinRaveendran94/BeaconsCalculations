@@ -122,16 +122,16 @@ public class DataClass {
 
             //Calculate Slope
 
-            double a = (pointB.latitude - pointA.latitude)/(pointB.longitude - pointA.longitude);
-            double c = pointA.latitude - (pointA.longitude * a);
+            double a = (pointB.longitude - pointA.longitude)/(pointB.latitude - pointA.latitude);
+            double c = pointA.longitude - (pointA.latitude * a);
             double b = -1.0;
 
             //Find closest point
 
-            double x = (b * ((b * currentPoint.longitude) - (a * currentPoint.latitude)) - (a * c))/((a*a) + (b*b));
-            double y = (a * ((-1 * b * currentPoint.longitude) + (a * currentPoint.latitude)) - (b * c))/((a*a) + (b*b));
+            double x = (b * ((b * currentPoint.latitude) - (a * currentPoint.longitude)) - (a * c))/((a*a) + (b*b));
+            double y = (a * ((-1 * b * currentPoint.latitude) + (a * currentPoint.longitude)) - (b * c))/((a*a) + (b*b));
 
-             newlocation = new LatLng(y,x);
+             newlocation = new LatLng(x,y);
 
         } catch (Exception e) {
             e.printStackTrace();
