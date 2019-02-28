@@ -77,9 +77,6 @@ public class DataClass {
         Location location =new Location("A");
         location.setLatitude(lat);
         location.setLongitude(lon);
-        LatLng latLng = new LatLng(lat,lon);
-//        mMap.clear();
-//        addMarker(latLng);
         LatLng latLng1 = stickToRoute(location, Waypoints);
 
         Log.e("centroidvalues", centroid.toString());
