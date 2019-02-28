@@ -44,7 +44,7 @@ public class DataClass {
         return distance;
     }
 
-    public static LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues, String json){
+    public static LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues,  ArrayList<JSONObject> Waypoints){
 
 
         float earthR = 6371;
@@ -80,22 +80,19 @@ public class DataClass {
         LatLng latLng = new LatLng(lat,lon);
 //        mMap.clear();
 //        addMarker(latLng);
-        LatLng latLng1 = stickToRoute(location, json);
+        LatLng latLng1 = stickToRoute(location, Waypoints);
 
         Log.e("centroidvalues", centroid.toString());
         return latLng1;
     }
 
-    public static LatLng stickToRoute(Location locationA, String json){
+    public static LatLng stickToRoute(Location locationA,  ArrayList<JSONObject> Waypoints){
 
-        ArrayList Waypoints = new ArrayList<JSONObject>();
         ArrayList<HashMap<String,String>> sortedlist = new ArrayList<>();
         LatLng newlocation = null;
 
         try {
 
-
-            Waypoints = getWaypointsForRoom(json);
             for ( int i = 0; i< Waypoints.size(); i++){
                 String[] latlong =  Waypoints.get(i).toString().split(",");
                 double latitude = Double.parseDouble(latlong[0]);
