@@ -44,7 +44,7 @@ public class DataClass {
         return distance;
     }
 
-    public static LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues,  ArrayList<JSONObject> Waypoints){
+    public static LatLng trilateral( ArrayList<HashMap<String,String>> beconsValues,  ArrayList Waypoints){
 
 
         float earthR = 6371;
@@ -86,7 +86,7 @@ public class DataClass {
         return latLng1;
     }
 
-    public static LatLng stickToRoute(Location locationA,  ArrayList<JSONObject> Waypoints){
+    public static LatLng stickToRoute(Location locationA,  ArrayList Waypoints){
 
         ArrayList<HashMap<String,String>> sortedlist = new ArrayList<>();
         LatLng newlocation = null;
